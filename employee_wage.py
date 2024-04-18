@@ -6,14 +6,15 @@ TOTAL_HRS = HRS_IN_DAY + PART_TIME_HRS
 
 def check_attendance():
     attendance = rm.randint(0,2)
-    if attendance==1:
-        print("Emplpoyee is Present")
-        cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
-    elif attendance == 2:
-        print("employee is present")
-        part_time_wage(RATE_PER_HR,TOTAL_HRS)
-    else :
-        print("Employee is Absent")
+    match attendance :
+        case 1 :
+            print("Employee is Present")
+            cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
+        case 2:
+            print("Employee is present and worked parttime")
+            part_time_wage(RATE_PER_HR, TOTAL_HRS)
+        case _:
+            print("Employee is absent")
                   
 #UC2
 def cal_dalily_wage(wage, hour):
