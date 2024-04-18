@@ -1,27 +1,30 @@
 import random as rm
+RATE_PER_HR = 20
+HRS_IN_DAY = 8
+PART_TIME_HRS = 4
+TOTAL_HRS = HRS_IN_DAY + PART_TIME_HRS
 
 def check_attendance():
-    n = rm.randint(0,1)
-    if n==1:
+    attendance = rm.randint(0,2)
+    if attendance==1:
         print("Emplpoyee is Present")
+        cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
+    elif attendance == 2:
+        print("employee is present")
+        part_time_wage(RATE_PER_HR,TOTAL_HRS)
     else :
-        print("Employee is Present")
-        
-check_attendance()            
-
+        print("Employee is Absent")
+                  
 #UC2
+def cal_dalily_wage(wage, hour):
+    print("Daily wage of employee is ", wage*hour)
 
-rate_per_hr = 20
-hrs_in_day = 8
-def cal_dalily_wage():
-    print(f"Daily wage of employee is {rate_per_hr*hrs_in_day}")
-cal_dalily_wage()
+#UC3
+def part_time_wage(wage, hour):
+    print("Parttime wage of employee is ", wage*hour)
 
-# UC3
+check_attendance()
 
-part_time_hr = 4
-def cal_part_wage():
-    total = part_time_hr*rate_per_hr 
-    print(f"PartTime wage of employee is {total}")
-cal_part_wage()
+
+    
 
