@@ -44,6 +44,11 @@ def part_time_wage(wage, hour):
 #UC5
 def cal_monthly_wage(wage, hour, day):
     print("Monthly Wage of Employee is ", wage*hour*day)
-    
+
+#UC7
+def view_total_work_hrs() :
+    print("Total HRS of the Employee is - ",TOTAL_HRS_WORKED)
+
 check_attendance()
 cal_monthly_wage(RATE_PER_HR,TOTAL_DAYS_WORKED,TOTAL_HRS_WORKED)
+view_total_work_hrs()
