@@ -24,10 +24,10 @@ def check_attendance():
 
                 case 2:
                     print("Employee is present and worked parttime")
-                    part_time_wage(RATE_PER_HR, TOTAL_HRS)
+                    part_time_wage(RATE_PER_HR, PART_TIME_HRS)
 
                     TOTAL_DAYS_WORKED+=1
-                    TOTAL_HRS_WORKED+=12
+                    TOTAL_HRS_WORKED+=4
                 
                 case _:
                     print("Employee is absent")
