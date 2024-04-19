@@ -6,13 +6,17 @@ TOTAL_HRS = HRS_IN_DAY + PART_TIME_HRS
 DAYS_IN_MONTH = 20
 def check_attendance():
     attendance = rm.randint(0,2)
+
+    TOTAL_HRS_WORKED = 0
+    TOTAL_DAYS_WORKED = 0
+
+    while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
+        TOTAL_DAYS_WORKED+=1
+        TOTAL_HRS_WORKED+=8
     match attendance :
         case 1 :
             print("Employee is Present")
             cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
-
-            TOTAL_HRS_WORKED = 0
-            TOTAL_DAYS_WORKED = 0
 
             while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
                 TOTAL_DAYS_WORKED+=1
@@ -22,9 +26,6 @@ def check_attendance():
         case 2:
             print("Employee is present and worked parttime")
             part_time_wage(RATE_PER_HR, TOTAL_HRS)
-            
-            TOTAL_HRS_WORKED = 0
-            TOTAL_DAYS_WORKED = 0
 
             while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
                 TOTAL_DAYS_WORKED+=1
