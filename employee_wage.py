@@ -15,7 +15,7 @@ DAYWISE_WAGE = {}
 def check_attendance():
         global TOTAL_HRS_WORKED 
         global TOTAL_DAYS_WORKED
-        while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
+        while TOTAL_HRS_WORKED<100 and TOTAL_DAYS_WORKED < 20 :
             attendance = rm.randint(0,2)
             match attendance :
                 case 1 :
