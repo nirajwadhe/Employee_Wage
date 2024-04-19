@@ -51,5 +51,16 @@ class Employee :
     def view_total_work_hrs(self, hours) :
         print("Total HRS of the Employee is - ",hours)
 
-E1 = Employee()
-E1.check_attendance()
+Niraj = Employee()
+print("\t Niraj Wage Details \n\n")
+print(Niraj.check_attendance())
+
+Rohit = Employee()
+print("\t Rohit Wage Details \n\n")
+print(Rohit.check_attendance())
+
+Mohit = Employee()
+print("\t Mohit Wage Details \n\n")
+print(Mohit.check_attendance())
+
+
