@@ -10,11 +10,28 @@ def check_attendance():
         case 1 :
             print("Employee is Present")
             cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
-            cal_monthly_wage(RATE_PER_HR,HRS_IN_DAY,DAYS_IN_MONTH)
+
+            TOTAL_HRS_WORKED = 0
+            TOTAL_DAYS_WORKED = 0
+
+            while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
+                TOTAL_DAYS_WORKED+=1
+                TOTAL_HRS_WORKED+=8
+            cal_monthly_wage(RATE_PER_HR,TOTAL_DAYS_WORKED,TOTAL_HRS_WORKED)
+
         case 2:
             print("Employee is present and worked parttime")
             part_time_wage(RATE_PER_HR, TOTAL_HRS)
-            cal_monthly_wage(RATE_PER_HR,HRS_IN_DAY,DAYS_IN_MONTH)
+            
+            TOTAL_HRS_WORKED = 0
+            TOTAL_DAYS_WORKED = 0
+
+            while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
+                TOTAL_DAYS_WORKED+=1
+                TOTAL_HRS_WORKED+=12
+
+            cal_monthly_wage(RATE_PER_HR,TOTAL_HRS_WORKED,TOTAL_DAYS_WORKED)
+        
         case _:
             print("Employee is absent")
                   
