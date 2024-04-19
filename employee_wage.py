@@ -10,29 +10,32 @@ TOTAL_DAYS_WORKED = 0
 
 WAGES_RECORD = []
 TOTAL_WAGES = []
+DAYWISE_WAGE = {}
 
 def check_attendance():
         global TOTAL_HRS_WORKED 
         global TOTAL_DAYS_WORKED
-        while TOTAL_HRS_WORKED<100 and TOTAL_DAYS_WORKED < 20 :
+        while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
             attendance = rm.randint(0,2)
             match attendance :
                 case 1 :
                     print("Employee is Present")
-                    cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
+                    wage = cal_dalily_wage(RATE_PER_HR, HRS_IN_DAY)
                     TOTAL_DAYS_WORKED+=1
                     TOTAL_HRS_WORKED+=8
+                    DAYWISE_WAGE[TOTAL_DAYS_WORKED] = wage
                     cal_monthly_wage(RATE_PER_HR,TOTAL_DAYS_WORKED,TOTAL_HRS_WORKED)
 
                 case 2:
                     print("Employee is present and worked parttime")
-                    part_time_wage(RATE_PER_HR, TOTAL_HRS)
+                    wage = part_time_wage(RATE_PER_HR, TOTAL_HRS)
                     TOTAL_DAYS_WORKED+=1
                     TOTAL_HRS_WORKED+=12
+                    DAYWISE_WAGE[TOTAL_DAYS_WORKED] = wage
                     cal_monthly_wage(RATE_PER_HR,TOTAL_DAYS_WORKED,TOTAL_HRS_WORKED)
                 
                 case _:
-                    print("Employee is absent")
+                    DAYWISE_WAGE[TOTAL_DAYS_WORKED] = "absent"
 
             print(TOTAL_HRS_WORKED)    
 #UC2
@@ -61,3 +64,4 @@ check_attendance()
 view_total_work_hrs()
 print(WAGES_RECORD)
 print(TOTAL_WAGES)
+print(DAYWISE_WAGE)
