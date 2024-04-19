@@ -11,7 +11,7 @@ TOTAL_DAYS_WORKED = 0
 def check_attendance():
         global TOTAL_HRS_WORKED 
         global TOTAL_DAYS_WORKED
-        while TOTAL_HRS_WORKED<100 or TOTAL_DAYS_WORKED < 20 :
+        while TOTAL_HRS_WORKED<100 and TOTAL_DAYS_WORKED < 20 :
             attendance = rm.randint(0,2)
             match attendance :
                 case 1 :
@@ -31,7 +31,8 @@ def check_attendance():
                 
                 case _:
                     print("Employee is absent")
-                    
+
+            print(TOTAL_HRS_WORKED)    
 #UC2
 def cal_dalily_wage(wage, hour):
     print("Daily wage of employee is ", wage*hour)
@@ -46,4 +47,3 @@ def cal_monthly_wage(wage, hour, day):
     
 check_attendance()
 cal_monthly_wage(RATE_PER_HR,TOTAL_DAYS_WORKED,TOTAL_HRS_WORKED)
-
